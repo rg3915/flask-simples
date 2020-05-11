@@ -8,10 +8,13 @@ Projeto simples feito em Flask
 git clone https://github.com/rg3915/flask-simples.git
 mv flask-simples app
 cd app
-pip install -r requirements.txt
+python -m venv .venv
+source .venv/bin/activate
+pip install -U pip; pip install -r requirements.txt
 
 flask db init
 flask db migrate
+flask db upgrade
 
 flask shell
 >>>
@@ -24,7 +27,7 @@ track = Track()
 track.name = "Track Two"
 db.session.add(track)
 db.session.commit()
-exit
+exit()
 
 flask run -p 5000 -h 0.0.0.0
 ```
