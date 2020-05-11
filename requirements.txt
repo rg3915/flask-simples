@@ -1,2 +1,3 @@
 Flask==1.1.2
+Flask-Migrate==2.5.3
 gunicorn==20.0.4
