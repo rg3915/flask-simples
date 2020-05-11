@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="https://flask.palletsprojects.com/en/1.1.x/_static/flask-icon.png">
+  <title>Flask simples</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+  <h1 class="title">Bem-vindo!</h1>
+  <h2>Este é um projeto feito em Flask.</h2>
+  <ul>
+    {% for track in tracks %}
+      <li>{{ track.name }}</li>
+    {% endfor %}
+  </ul>
+</body>
+
+</html>
