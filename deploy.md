@@ -5,7 +5,7 @@
 ## Criar um usuário
 
 ```
-adduser deploy
+sudo adduser deploy
 
 ls /home
 
@@ -112,6 +112,32 @@ Renomeie a pasta para `app`.
 mv flask-simples app
 ```
 
+Faça o que está no README do repo
+
+```
+cd app
+python -m venv .venv
+source .venv/bin/activate
+pip install -U pip; pip install -r requirements.txt
+
+flask db init
+flask db migrate
+flask db upgrade
+
+flask shell
+>>>
+from app import db, Track
+track = Track()
+track.name = "Track One"
+db.session.add(track)
+db.session.commit()
+track = Track()
+track.name = "Track Two"
+db.session.add(track)
+db.session.commit()
+exit()
+```
+
 Para rodar a aplicação digite
 
 ```
@@ -195,7 +221,7 @@ cat default
 Crie um novo arquivo `webapp`
 
 ```
-vim /etc/nginx/sites-available/webapp
+sudo vim /etc/nginx/sites-available/webapp
 
 server {
     listen 80;
